@@ -18,7 +18,13 @@ namespace Homework
             Ship nopeople = new Ship("mechanic");
             nopeople.PrintResults();
 
-
+            int s = 5;
+            Counter count1 = new Counter();
+            count1.Increase(s);
+            count1.Print(s);
+            Speed speed1 = new Speed();
+            count1.Increase(speed1);
+            count1.Print(speed1.kmh);
         }
     }
 }
