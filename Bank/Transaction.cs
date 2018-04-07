@@ -16,6 +16,5 @@ namespace Bank
             this.Date = date;
             this.Notes = note;
         }
-        private List<Transaction> allTransactions = new List<Transaction>();
     }
 }

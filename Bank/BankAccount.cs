@@ -1,30 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Bank
 {
-    class BankAccount
+    public class BankAccount
     {
-        public BankAccount(string name, decimal initialBalance) {
-            this.Owner = name;
-            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
-            this.Balance = initialBalance;
-            this.Number = accountNumberSeed.ToString();
-            accountNumberSeed++;
-        }
-        public string Number { get; }
         public string Owner { get; set; }
-        public decimal Balance {
+        public string Number { get; }
+        public decimal Balance
+        {
             get
-                {
+
+            {
                 decimal balance = 0;
                 foreach (var item in allTransactions)
                 {
                     balance += item.Amount;
                 }
+
                 return balance;
-            }        
+            }
+        }
+
+        private static int accountNumberSeed = 1234567890;
+        private List<Transaction> allTransactions = new List<Transaction>();
+
+        public BankAccount(string name, decimal initialBalance)
+        {
+            this.Owner = name;
+            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+            this.Number = accountNumberSeed.ToString();
+            accountNumberSeed++;
         }
 
         public void MakeDeposit(decimal amount, DateTime date, string note)
@@ -49,6 +55,18 @@ namespace Bank
             }
             var withdrawal = new Transaction(-amount, date, note);
             allTransactions.Add(withdrawal);
+        }
+        public string GetAccountHistory()
+        {
+            var report = new System.Text.StringBuilder();
+
+            report.AppendLine("Date\t\tAmount\tNote");
+            foreach (var item in allTransactions)
+            {
+                report.AppendLine($"{item.Date.ToShortDateString()}\t{item.Amount}\t{item.Notes}");
+            }
+
+            return report.ToString();
         }
     }
 }
