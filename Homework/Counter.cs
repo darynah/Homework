@@ -14,12 +14,10 @@ namespace Homework
         }
         public void Print(int value) {
             Console.WriteLine(value);
-            Console.ReadLine();
-        }
+            }
         public void Print(Speed value)
         {
             Console.WriteLine(value.kmh);
-            Console.ReadLine();
-        }
+            }
     }
 }
