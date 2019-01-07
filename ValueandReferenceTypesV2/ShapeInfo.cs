@@ -4,12 +4,12 @@ using System.Text;
 
 namespace ValueandReferenceTypesV2
 {
-    public class ShapeInfo
-    {
-        public string infoString;
-        public ShapeInfo(string info)
-        {
-            infoString = info;
-        }
-    }
+  public class ShapeInfo
+  {
+ public string infoString;
+ public ShapeInfo(string info)
+ {
+   infoString = info;
+ }
+  }
 }

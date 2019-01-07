@@ -4,17 +4,17 @@ using System.Text;
 
 namespace Bank
 {
-    class Transaction
-    {
-        public decimal Amount { get; }
-        public DateTime Date { get; }
-        public string Notes { get; }
+  class Transaction
+  {
+ public decimal Amount { get; }
+ public DateTime Date { get; }
+ public string Notes { get; }
 
-        public Transaction(decimal amount, DateTime date, string note)
-        {
-            this.Amount = amount;
-            this.Date = date;
-            this.Notes = note;
-        }
-    }
+ public Transaction(decimal amount, DateTime date, string note)
+ {
+   this.Amount = amount;
+   this.Date = date;
+   this.Notes = note;
+ }
+  }
 }
