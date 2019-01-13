@@ -1,20 +1,37 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Inherit1
 {
-    class Point: IComparable
+    class Point
     {
         public int X;
         public int Y;
 
-        public int CompareTo(object obj)
+    }
+
+    class DistanceToZeroComararer : IComparer
+    {
+        double DistanceToZero(Point point)
         {
-            var point = (Point)obj;
-            var thisDst = Math.Sqrt(X * X + Y * Y);
-            var thatDst = Math.Sqrt(point.X * point.X + point.Y * point.Y);
-            return thisDst.CompareTo(thatDst);
+            return Math.Sqrt(point.X * point.X + point.Y * point.Y);
+        }
+
+        public int Compare(object x, object y)
+        {
+            return DistanceToZero((Point)x).CompareTo(DistanceToZero((Point)y));
         }
     }
+
+    class XdescendingCompararer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            return -((Point) x).X.CompareTo(((Point) y).X);
+        }
+    }
+
     static class ArrayExtensions
     {
         public static void Swap(this Array array, int i, int j)
@@ -24,14 +41,14 @@ namespace Inherit1
             array.SetValue(obj, j);
         }
 
-        public static void BubbleSort(this Array array)
+        public static void BubbleSort(this Array array, IComparer comparer)
         {
             for (int i = array.Length - 1; i >= 0; i--)
                 for (int j = 1; j <= i; j++)
                 {
-                    var element1 = (IComparable)array.GetValue(j);
+                    var element1 = array.GetValue(j);
                     var element0 = array.GetValue(j - 1);
-                    if (element1.CompareTo(element0) < 0)
+                    if (comparer.Compare(element1,element0) < 0)
                     {
                         array.Swap(j - 1, j);
                     }
@@ -52,10 +69,9 @@ namespace Inherit1
                     new Point() {X = 3, Y = 3},
 
                 };
-                intArray.BubbleSort();
-                doubleArray.BubbleSort();
-                stringArray.BubbleSort();
-                pointArray.BubbleSort();
+                
+                pointArray.BubbleSort(new DistanceToZeroComararer());
+                pointArray.BubbleSort(new XdescendingCompararer());
             }
         }
     }
