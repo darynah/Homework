@@ -2,10 +2,18 @@
 
 namespace Inherit1
 {
-    class Point
+    class Point: IComparable
     {
         public int X;
         public int Y;
+
+        public int CompareTo(object obj)
+        {
+            var point = (Point)obj;
+            var thisDst = Math.Sqrt(X * X + Y * Y);
+            var thatDst = Math.Sqrt(point.X * point.X + point.Y * point.Y);
+            return thisDst.CompareTo(thatDst);
+        }
     }
     static class ArrayExtensions
     {
@@ -39,8 +47,8 @@ namespace Inherit1
                 var doubleArray = new double[] { 11, 2, 3 };
                 var pointArray = new Point[]
                 {
-                    new Point() {X = 1, Y = 1},
                     new Point() {X = 2, Y = 2},
+                    new Point() {X = 1, Y = 1},
                     new Point() {X = 3, Y = 3},
 
                 };

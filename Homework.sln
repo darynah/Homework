@@ -93,9 +93,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskPrintAnyArray", "Print\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskInheritanceArray", "InheritanceArray\TaskInheritanceArray.csproj", "{61BB184D-B781-4B27-909F-6F83D39E1087}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAverageThree", "TaskAverageThree\TaskAverageThree.csproj", "{B8193C3B-F9B1-4E04-8ECF-4DFAF387A834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskAverageThree", "TaskAverageThree\TaskAverageThree.csproj", "{B8193C3B-F9B1-4E04-8ECF-4DFAF387A834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMinArray", "TaskMinArray\TaskMinArray.csproj", "{B60BC249-37DB-452A-9691-2CF6D6567EF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskMinArray", "TaskMinArray\TaskMinArray.csproj", "{B60BC249-37DB-452A-9691-2CF6D6567EF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskBookSort", "TaskBookSort\TaskBookSort.csproj", "{48E78243-D74A-415F-8257-FC59ACDCD280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -279,6 +281,10 @@ Global
 		{B60BC249-37DB-452A-9691-2CF6D6567EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B60BC249-37DB-452A-9691-2CF6D6567EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B60BC249-37DB-452A-9691-2CF6D6567EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E78243-D74A-415F-8257-FC59ACDCD280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E78243-D74A-415F-8257-FC59ACDCD280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E78243-D74A-415F-8257-FC59ACDCD280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E78243-D74A-415F-8257-FC59ACDCD280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -329,6 +335,7 @@ Global
 		{61BB184D-B781-4B27-909F-6F83D39E1087} = {2A21369C-A1BB-4246-9822-55F18F3DCB17}
 		{B8193C3B-F9B1-4E04-8ECF-4DFAF387A834} = {2A21369C-A1BB-4246-9822-55F18F3DCB17}
 		{B60BC249-37DB-452A-9691-2CF6D6567EF8} = {2A21369C-A1BB-4246-9822-55F18F3DCB17}
+		{48E78243-D74A-415F-8257-FC59ACDCD280} = {2A21369C-A1BB-4246-9822-55F18F3DCB17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D2BF972-94CC-476B-B730-7CF6A7E874E8}
